@@ -113,5 +113,14 @@ npm install @nestjs/typeorm typeorm pg
 
 5.- instalar linux para windows 10
 Requisito tener activado virtualizacion
-linux :wsl --install -d Ubuntu
+linux :wsl --install -d Ubuntuker
 
+6.- npm install --save @nestjs/swagger swagger-ui-express
+
+7.- Validadores :npm install class-validator class-transformer
+
+8.- docker-compose up -d
+
+Comando
+Generar :
+nest generate resource providers
