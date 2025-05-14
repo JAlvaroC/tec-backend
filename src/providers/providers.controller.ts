@@ -9,6 +9,7 @@ export class ProvidersController {
 
   @Post()
   create(@Body() createProviderDto: CreateProviderDto) {
+    console.log("🚀 ~ ProvidersController ~ create ~ createProviderDto:", createProviderDto)
     return this.providersService.create(createProviderDto);
   }
 

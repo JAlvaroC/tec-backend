@@ -11,10 +11,24 @@ export class CreateProductoDto {
   @MinLength(3)
   name: string;
 
+  @ApiProperty({
+    description: 'Precio del producto',
+    nullable: false,
+    minimum: 0,
+    example: 10.99,
+  })
+
   @IsNumber()
   @IsPositive()
   @IsOptional()
   price: number;
-  categoria: string;
+
+
+  @ApiProperty()
+  @IsNumber()
   stock: number;
+
+  @ApiProperty()
+  @IsNumber()
+  categoryId: number;
 }

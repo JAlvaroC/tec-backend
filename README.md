@@ -124,3 +124,6 @@ linux :wsl --install -d Ubuntuker
 Comando
 Generar :
 nest generate resource providers
+nest generate resource categories
+
+npm install --save-dev @nestjs/schematics

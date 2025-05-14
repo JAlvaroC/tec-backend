@@ -22,7 +22,7 @@ export class Provider {
     
     @Column()
     @ApiProperty()
-    adress:string;
+    address:string;
 
 
 }

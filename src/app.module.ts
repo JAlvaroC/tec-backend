@@ -6,6 +6,10 @@ import { ProductsModule } from './products/products.module';
 import { Product } from "./products/entitities/product.entity";
 import { ProvidersModule } from './providers/providers.module';
 import { Provider } from "./providers/entities/provider.entity";
+import { CategoriesModule } from './categories/categories.module';
+import { Category } from "./categories/entities/category.entity";
+import { InventoriesModule } from './inventories/inventories.module';
+import { Inventory } from "./inventories/entities/inventory.entity";
 
 @Module({
   imports: [
@@ -18,9 +22,12 @@ import { Provider } from "./providers/entities/provider.entity";
       username: 'postgres',
       password: '12345678',
       database: 'tec_db',
-      entities: [Product,Provider],
+      entities: [Product,Provider,Category,Inventory],
       synchronize: true,
     }),
+    CategoriesModule,
+    InventoriesModule,
+
   ],
   controllers: [AppController],
   providers: [AppService],

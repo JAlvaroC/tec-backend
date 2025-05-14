@@ -6,7 +6,8 @@
 // }
 
 import { ApiProperty } from "@nestjs/swagger";
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Category } from "src/categories/entities/category.entity";
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
 
 @Entity({name: 'products'})
 export class Product {
@@ -28,4 +29,11 @@ export class Product {
 
   @Column()
   stock: number;
+
+  // @ManyToOne(() => Category, (category) => category.products,{eager: true})
+  @ManyToOne(() => Category, { eager: true })
+  @JoinColumn({ name: 'category_id' })
+  @ApiProperty({ type: () => Category })
+  category: Category;
+  
 }
