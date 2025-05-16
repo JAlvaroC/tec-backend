@@ -125,5 +125,7 @@ Comando
 Generar :
 nest generate resource providers
 nest generate resource categories
-
+npx nest g resource purchase-request-item
+npx nest g resource purchase-request
+npx nest g resource users
 npm install --save-dev @nestjs/schematics

@@ -7,7 +7,8 @@
 
 import { ApiProperty } from "@nestjs/swagger";
 import { Category } from "src/categories/entities/category.entity";
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Inventory } from "src/inventories/entities/inventory.entity";
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 
 @Entity({name: 'products'})
 export class Product {
@@ -36,4 +37,8 @@ export class Product {
   @ApiProperty({ type: () => Category })
   category: Category;
   
+
+  @OneToMany(() => Inventory, inventory => inventory.product)
+inventories: Inventory[];
+
 }

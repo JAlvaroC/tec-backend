@@ -8,10 +8,15 @@ export class Inventory {
   @ApiProperty()
   id: number;
 
-  @ManyToOne(() => Product, { eager: true })
-  @JoinColumn({ name: 'producto_id' }) // esto crea la columna 'producto_id'
-  @ApiProperty({ type: () => Product })
-  product: Product;
+  // @ManyToOne(() => Product, { eager: true })
+  // @JoinColumn({ name: 'producto_id' }) // esto crea la columna 'producto_id'
+  // @ApiProperty({ type: () => Product })
+  // product: Product;
+
+  @ManyToOne(() => Product, product => product.inventories, { onDelete: 'CASCADE' })
+@JoinColumn({ name: 'product_id' })
+product: Product;
+
 
   @Column()
   @ApiProperty()
